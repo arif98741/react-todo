@@ -3,11 +3,11 @@ import {TodoItem} from "./TodoItem.jsx";
 import styles from './todolist.module.css'
 
 
-export const TodoList = ({todos}) => {
+export const TodoList = ({todos,setTodos}) => {
     return (
         <div className={styles.list}>
             {todos.map((item) => (
-                <TodoItem key={Math.random()} item={item}/>
+                <TodoItem todos={todos} setTodos={setTodos} key={Math.random()} item={item}/>
             ))}
         </div>
     )

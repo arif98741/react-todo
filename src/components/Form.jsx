@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import style from './form.module.css'
+import styles from './form.module.css'
 
 export const Form = ({todos, setTodos}) => {
     const [todo, setTodo] = useState("")
@@ -7,19 +7,24 @@ export const Form = ({todos, setTodos}) => {
     function handleSubmit(e) {
         e.preventDefault();
         setTodos([...todos, todo]);
+
+        
+        console.log(`Added ${todo}`);
+        
         setTodo("");
     }
 
     return (
         <div>
-            <form className={style.todoform} onSubmit={(e) => handleSubmit(e)}>
-                <div className={style.inputContainer}>
-                    <input placeholder={'Enter todo name'} className={style.modernInput}
+            <form className={styles.todoform} onSubmit={(e) => handleSubmit(e)}>
+                <div className={styles.inputContainer}>
+                    <input placeholder={'Enter todo name'} className={styles.modernInput}
                            onChange={(e) => setTodo(e.target.value)}
                            value={todo} type="text"/>
-                    <button className={style.modernButton} type={'submit'}>Submit</button>
+                    <button className={styles.modernButton} type={'submit'}>Add</button>
                 </div>
             </form>
+            <p className={styles.totalTask}>Total Task: <strong>{todos.length}</strong></p>
         </div>
     )
 }

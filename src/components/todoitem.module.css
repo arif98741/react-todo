@@ -2,6 +2,7 @@
     width: 500px;
     color: #353935;
     font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .itemName {
@@ -10,4 +11,15 @@
 }
 .line{
     border: 1px solid #f4f4f4;
+}
+.deleteButton{
+    float: right;
+    border: none;
+    padding: 12px 20px;
+    background-color: #f7ca18 ;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: -10px;
+    font-size: 14px;
 }
