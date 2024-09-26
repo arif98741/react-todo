@@ -2,18 +2,19 @@ import React, { useState } from 'react'
 import styles from './form.module.css'
 
 export const Form = ({ todos, setTodos }) => {
-    //const [todo, setTodo] = useState("")
     const [todo, setTodo] = useState({
         name: "",
         done: false
-    })
+    });
+
+    //console.log(todos.filter((todo)=>todo.done).length);
+    const totalTodos = todos.length
+    const completedTodos = todos.filter((todo)=>todo.done).length
+    const incompleteTodos = totalTodos - completedTodos;
 
     function handleSubmit(e) {
         e.preventDefault();
         setTodos([...todos, todo]);
-
-
-        console.log(`Added ${todo.name}`);
 
         setTodo({
             name: "",
@@ -31,7 +32,7 @@ export const Form = ({ todos, setTodos }) => {
                     <button className={styles.modernButton} type={'submit'}>Add</button>
                 </div>
             </form>
-            <p className={styles.totalTask}>Total Task: <strong>{todos.length}</strong></p>
+            <p className={styles.totalTask}>Total Todo: <strong>{todos.length}, </strong> Completed Todo: <strong>{completedTodos},</strong> Incomplete Todo: <strong>{incompleteTodos}</strong></p>
         </div>
     )
 }
