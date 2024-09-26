@@ -30,6 +30,7 @@
     border-radius: 5px;
     padding: 10px;
     color: #fff;
+    cursor: pointer;
 }
 .totalTask{
     text-align: center;

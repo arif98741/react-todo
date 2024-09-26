@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styles from './form.module.css'
 
-export const Form = ({todos, setTodos}) => {
+export const Form = ({ todos, setTodos }) => {
     //const [todo, setTodo] = useState("")
     const [todo, setTodo] = useState({
         name: "",
@@ -11,11 +11,11 @@ export const Form = ({todos, setTodos}) => {
     function handleSubmit(e) {
         e.preventDefault();
         setTodos([...todos, todo]);
- 
-        
+
+
         console.log(`Added ${todo.name}`);
-        
-        setTodo({ 
+
+        setTodo({
             name: "",
             done: false
         });
@@ -26,8 +26,8 @@ export const Form = ({todos, setTodos}) => {
             <form className={styles.todoform} onSubmit={(e) => handleSubmit(e)}>
                 <div className={styles.inputContainer}>
                     <input placeholder={'Enter todo name'} className={styles.modernInput}
-                           onChange={(e) => setTodo({name: e.target.value, done: false})}
-                           value={todo.name} type="text"/>
+                        onChange={(e) => setTodo({ name: e.target.value, done: false })}
+                        value={todo.name} type="text" />
                     <button className={styles.modernButton} type={'submit'}>Add</button>
                 </div>
             </form>

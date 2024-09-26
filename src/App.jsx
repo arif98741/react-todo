@@ -1,13 +1,15 @@
 import Todo from "./components/Todo.jsx";
-import {Header} from "./components/Header.jsx";
+import { Header } from "./components/Header.jsx";
 import './App.css'
+import { Footer } from "./components/Footer.jsx";
 
 
 function App() {
     return (
         <div className='App'>
-            <Header/>
-            <Todo/>
+            <Header />
+            <Todo />
+            {/* <Footer /> */}
         </div>
     )
 }
