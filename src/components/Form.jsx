@@ -7,7 +7,6 @@ export const Form = ({ todos, setTodos }) => {
         done: false
     });
 
-    //console.log(todos.filter((todo)=>todo.done).length);
     const totalTodos = todos.length
     const completedTodos = todos.filter((todo)=>todo.done).length
     const incompleteTodos = totalTodos - completedTodos;
