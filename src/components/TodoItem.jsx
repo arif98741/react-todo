@@ -5,14 +5,14 @@ export const TodoItem = ({item,todos, setTodos}) => {
     
     function handleDelete(item)
     {
-        console.log(`Deleted ${item}`);
         setTodos(todos.filter((todo)=> item != todo) )
+        console.log(`Deleted button clicked`,todos);
         
     }
     return (
         
         <div className={styles.item}>
-            <div className={styles.itemName}>{item} <span>
+            <div className={styles.itemName}>{item.name} <span>
                 <button onClick={(e)=>handleDelete(item)} className={ styles.deleteButton }>x</button></span>
                 </div>
             
