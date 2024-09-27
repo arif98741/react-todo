@@ -7,3 +7,5 @@ npm install
 npm run dev
 
 </pre>
+
+Visiable at https://react-todo2024x.netlify.app
